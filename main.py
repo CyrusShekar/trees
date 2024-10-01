@@ -32,3 +32,25 @@ class BinTree:
                     break
             else:
                 break
+
+    def search_node(self, search_term):
+        current_node = self.root
+
+        if self.root is None:
+            return False
+        else:
+            while True:
+                if search_term < current_node.value:
+                    if current_node.left is None:
+                        return False
+                    else:
+                        current_node = current_node.left
+                elif search_term > current_node.value:
+                    if current_node.right is None:
+                        return False
+                    else:
+                        current_node = current_node.right
+                else:
+                    return True
+
+
